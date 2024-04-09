@@ -7,16 +7,19 @@ interface TVPageProps {
   onAddToFavorites: (movie: Movie) => void;
 }
 
+// TVPage component for displaying TV shows based on category
 const TVPage: React.FC<TVPageProps> = ({ onAddToFavorites }) => {
   const { category = 'popular' } = useParams();
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
     const tvCategory = category === 'toprated' ? 'toprated_tv' : 'popular_tv';
+    // Fetch TV shows based on the category
     fetchMovies(tvCategory)
       .then((data) => setMovies(data))
       .catch((error) => console.error('Error fetching TV shows:', error));
   }, [category]);
+
 
   return (
     <div className="container mt-4">

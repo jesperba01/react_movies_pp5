@@ -6,6 +6,7 @@ import './MovieCard.css';
 import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// Interface for MovieCard component props
 interface MovieCardProps {
   movie: Movie;
   isFavorite: boolean;
@@ -13,6 +14,7 @@ interface MovieCardProps {
   onRemoveFromFavorites: (movieId: number) => void;
 }
 
+// Component for displaying a movie card
 const MovieCard: React.FC<MovieCardProps> = ({ movie, isFavorite, onAddToFavorites, onRemoveFromFavorites }) => {
   const handleAddToFavorites = () => {
     onAddToFavorites(movie);

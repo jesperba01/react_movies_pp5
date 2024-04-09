@@ -5,6 +5,7 @@ import MovieCard from './MovieCard';
 const FavouritesList: React.FC = () => {
   const [favourites, setFavourites] = useState<Movie[]>([]);
 
+  // Fetch and set favorites from local storage on component mount
   useEffect(() => {
     const movieFavourites = JSON.parse(localStorage.getItem('react-movie-app-favourites') || '[]');
     if (movieFavourites.length > 0) {
@@ -22,6 +23,7 @@ const FavouritesList: React.FC = () => {
     }
   }, []);
 
+  // Function to add a movie to favorites
   const addToFavorites = (movie: Movie) => {
     const isAlreadyFavorite = favourites.some((favMovie) => favMovie.id === movie.id);
   
@@ -34,6 +36,7 @@ const FavouritesList: React.FC = () => {
     }
   };
 
+  // Function to remove a movie from favorites
   const removeFromFavorites = (movieId: number) => {
     const updatedFavourites = favourites.filter((movie) => movie.id !== movieId);
     setFavourites(updatedFavourites);

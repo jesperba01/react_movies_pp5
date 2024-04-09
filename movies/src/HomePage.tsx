@@ -11,6 +11,7 @@ const HomePage: React.FC = () => {
   const [airingTodayShows, setAiringTodayShows] = useState<Movie[]>([]);
   const [showMovieLists, setShowMovieLists] = useState<boolean>(true);
 
+  // Fetch movies and TV shows data on component mount
   useEffect(() => {
     fetchPopularMovies();
     fetchTopRatedMovies();
@@ -32,7 +33,7 @@ const HomePage: React.FC = () => {
       console.log('Movie is already in favorites');
     }
   };
-
+  // Functions to fetch different categories of movies and TV shows and only display 5 of them
   const fetchPopularMovies = async () => {
     try {
       const movies = await fetchMovies('popular', 5);
@@ -71,8 +72,8 @@ const HomePage: React.FC = () => {
 
   const fetchUpcomingMovies = async () => {
     try {
-      const movies = await fetchMovies('upcoming', 5); // Fetch upcoming movies
-      setUpcomingMovies(movies); // Set upcoming movies state
+      const movies = await fetchMovies('upcoming', 5);
+      setUpcomingMovies(movies); 
     } catch (error) {
       console.error('Error fetching upcoming movies:', error);
     }
@@ -80,8 +81,8 @@ const HomePage: React.FC = () => {
 
   const fetchAiringTodayShows = async () => {
     try {
-      const shows = await fetchMovies('airingToday', 5); // Fetch airing today TV shows
-      setAiringTodayShows(shows); // Set airing today TV shows state
+      const shows = await fetchMovies('airingToday', 5);
+      setAiringTodayShows(shows); 
     } catch (error) {
       console.error('Error fetching airing today TV shows:', error);
     }
