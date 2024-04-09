@@ -3,7 +3,7 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
-During the development process of the React Movie App, thorough testing was conducted to ensure the functionality, compatibility, and responsiveness of the application across various devices and browsers. Below is a detailed summary of the testing procedures and outcomes:
+During the development process of the Movie App, thorough testing was conducted to ensure the functionality, compatibility, and responsiveness of the application across various devices and browsers. Below is a detailed summary of the testing procedures and outcomes:
 
 ## Code Validation
 
