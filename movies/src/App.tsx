@@ -8,7 +8,7 @@ import FavouritesList from './FavouritesList';
 import { Movie } from './Api';
 import Search from './Search';
 
-
+// Main App component
 const App: React.FC = () => {
   const [homeMovies, setHomeMovies] = useState<Movie[]>([]);
 
@@ -27,6 +27,7 @@ const App: React.FC = () => {
       console.error('Error fetching movies:', error);
     }
   };
+  // Function to handle adding a movie to favorites
   const handleAddToFavorites = (movie: Movie) => {
     const currentFavorites = JSON.parse(localStorage.getItem('react-movie-app-favourites') || '[]') as Movie[];
     console.log('Movie:', movie);

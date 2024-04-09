@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// Movie and Tv interface
 export interface Movie {
   id: number;
   title: string;
@@ -10,6 +11,7 @@ export interface Movie {
   first_air_date: string;
 }
 
+// API endpoints
 const popular = "https://api.themoviedb.org/3/movie/popular?api_key=4ba04b36da1b0f7da8622918c9908ef8";
 const toprated = "https://api.themoviedb.org/3/movie/top_rated?api_key=4ba04b36da1b0f7da8622918c9908ef8";
 const popular_tv = "https://api.themoviedb.org/3/tv/popular?api_key=4ba04b36da1b0f7da8622918c9908ef8";
@@ -18,6 +20,7 @@ const upcoming = "https://api.themoviedb.org/3/movie/upcoming?api_key=4ba04b36da
 const airingToday = "https://api.themoviedb.org/3/tv/airing_today?api_key=4ba04b36da1b0f7da8622918c9908ef8";
 const searchBar = "https://api.themoviedb.org/3/movie/{movie_id}/keywords?api_key=4ba04b36da1b0f7da8622918c9908ef8"
 
+// Function to fetch movies based on the selected Url
 export const fetchMovies = async (selectedList: string, limit?: number): Promise<Movie[]> => {
   try {
     let url;
@@ -53,6 +56,7 @@ export const fetchMovies = async (selectedList: string, limit?: number): Promise
   }
 };
 
+// Function to clean percentage
 const cleanPercentage = (percentage: number): number => {
   const isNegativeOrNaN = !Number.isFinite(percentage) || percentage < 0;
   const isTooHigh = percentage > 100;
