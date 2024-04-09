@@ -16,20 +16,20 @@ interface MovieCardProps {
 
 // Component for displaying a movie card
 const MovieCard: React.FC<MovieCardProps> = ({ movie, isFavorite, onAddToFavorites, onRemoveFromFavorites }) => {
-  const handleAddToFavorites = () => {
-    onAddToFavorites(movie);
-  };
-
-  const handleRemoveFromFavorites = () => {
-    onRemoveFromFavorites(movie.id);
-  };
-
   const handleClick = () => {
     if (isFavorite) {
       handleRemoveFromFavorites();
     } else {
       handleAddToFavorites();
     }
+  };
+
+  const handleAddToFavorites = () => {
+    onAddToFavorites(movie);
+  };
+
+  const handleRemoveFromFavorites = () => {
+    onRemoveFromFavorites(movie.id);
   };
 
   return (

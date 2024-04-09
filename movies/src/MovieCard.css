@@ -64,20 +64,18 @@
     width: 40px;
     height: 40px;
     font-size: 24px;
-    display: none;
-  }
-  
-  
-  @media (max-width: 1200px) {
-    .movie-card:hover .heart-overlay {
-      display: none; 
-    }
-    .heart-overlay {
-      display: block; 
-    }
   }
   
   .heart-overlay:hover {
     background-color: #ff0000;
     color: white;
+  }
+
+  @media (max-width: 1200px) {
+    .heart-overlay {
+      display: block; 
+    }
+    .movie-card:hover .heart-overlay {
+      display: none; 
+    }
   }
