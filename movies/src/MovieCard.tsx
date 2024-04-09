@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import  Pie  from './Pie';
+import Pie from './Pie';
 import { Movie } from './Api';
 import './MovieCard.css';
 import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -25,19 +25,10 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, isFavorite, onAddToFavorit
   };
 
   const handleClick = () => {
-    // Check if the screen width is less than 1200px
-    if (window.innerWidth < 1200) {
-      if (isFavorite) {
-        handleRemoveFromFavorites();
-      } else {
-        handleAddToFavorites();
-      }
+    if (isFavorite) {
+      handleRemoveFromFavorites();
     } else {
-      if (isFavorite) {
-        handleRemoveFromFavorites();
-      } else {
-        handleAddToFavorites();
-      }
+      handleAddToFavorites();
     }
   };
 
